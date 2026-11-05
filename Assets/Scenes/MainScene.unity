@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bcb84c236b5b4147abbf62f279ea729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraMain
-  Player: {fileID: 799645925}
+  Player: {fileID: 611411862}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +410,7 @@ GameObject:
   - component: {fileID: 611411865}
   - component: {fileID: 611411864}
   - component: {fileID: 611411867}
+  - component: {fileID: 611411868}
   m_Layer: 0
   m_Name: placeholder
   m_TagString: Untagged
@@ -426,7 +427,7 @@ Transform:
   m_GameObject: {fileID: 611411862}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.416, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -539,6 +540,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &611411868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611411862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48fb8845d19af4be7a3cc8d0f35a1f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  speed: 4
 --- !u!1 &702924198
 GameObject:
   m_ObjectHideFlags: 0
