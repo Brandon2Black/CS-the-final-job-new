@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Turn(string Direction)
+    async void Turn(string Direction)
     {
      while(rotate)
      {
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
            rotate = false;
            rotation = 0;
           }
-
+     await Awaitable.WaitForSecondsAsync(0.05f);
         }
 
          if (Direction == "Left")
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
           }
 
         }
-  
+  await Awaitable.WaitForSecondsAsync(0.05f);
      }
     }
 }
