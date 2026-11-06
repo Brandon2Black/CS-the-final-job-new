@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
            rotate = false;
            rotation = 0;
           }
-     await Awaitable.WaitForSecondsAsync(0.05f);
+     await Awaitable.WaitForSecondsAsync(0.03f);
         }
 
          if (Direction == "Left")
@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
            rotate = false;
            rotation = 0;
           }
-  await Awaitable.WaitForSecondsAsync(0.05f);
+  await Awaitable.WaitForSecondsAsync(0.03f);
         }
 
      }
