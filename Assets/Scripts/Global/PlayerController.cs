@@ -58,9 +58,9 @@ public class PlayerController : MonoBehaviour
            rotate = false;
            rotation = 0;
           }
-
-        }
   await Awaitable.WaitForSecondsAsync(0.05f);
+        }
+
      }
     }
 }
