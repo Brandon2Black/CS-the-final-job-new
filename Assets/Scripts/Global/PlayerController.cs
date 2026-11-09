@@ -7,7 +7,9 @@ public class PlayerController : MonoBehaviour
     public float speed;
     Vector3 movement;
     bool rotate;
+    bool isRotating;
     int rotation;
+
 
     void Update()
     {
@@ -19,12 +21,12 @@ public class PlayerController : MonoBehaviour
 
         transform.position += movement;
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
             rotate = true;
             Turn("Right");
         }
-         if (Input.GetKeyDown(KeyCode.LeftArrow))
+         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {
             rotate = true;
             Turn("Left");
@@ -33,7 +35,10 @@ public class PlayerController : MonoBehaviour
 
     async void Turn(string Direction)
     {
-     while(rotate)
+        if(rotate)
+        {
+            isRotating = true;
+while(rotate)
      {
         if (Direction == "Right")
         {
@@ -44,6 +49,7 @@ public class PlayerController : MonoBehaviour
           {
            rotate = false;
            rotation = 0;
+           isRotating = false;
           }
      await Awaitable.WaitForSecondsAsync(0.03f);
         }
@@ -57,10 +63,13 @@ public class PlayerController : MonoBehaviour
           {
            rotate = false;
            rotation = 0;
+           isRotating = false;
           }
   await Awaitable.WaitForSecondsAsync(0.03f);
         }
 
      }
+        }
+     
     }
 }

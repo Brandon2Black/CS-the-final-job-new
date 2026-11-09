@@ -2021,7 +2021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ba010531c42748aa801393223a671ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Transition
-  mainMenuSource: {fileID: 0}
+  mainMenuSource: {fileID: 609711623}
 --- !u!1 &1940580339
 GameObject:
   m_ObjectHideFlags: 0
