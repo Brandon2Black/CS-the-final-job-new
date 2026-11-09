@@ -3,11 +3,17 @@ using UnityEngine;
 public class Title : MonoBehaviour
 {
  public Transition TransitionClass;
+ public AudioSource mainMenuSource;
 ////void PressedPlay()
 //{
 //  TransitionClass.TransitionToScene("MainScene");
 //}
 public GameObject SettingsUI;
+
+public void Start()
+{
+  mainMenuSource.Play();
+}
     public void ExitButton()
     {
         Application.Quit();
