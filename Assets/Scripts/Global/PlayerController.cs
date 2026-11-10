@@ -5,22 +5,26 @@ public class PlayerController : MonoBehaviour
 
     string turnedState;
     public float speed;
-    Vector3 movement;
+    //Vector3 movement;
     bool rotate;
     bool isRotating;
     int rotation;
-
+    
+    bool move;
+    bool isMoving = false;
+    int movement;
 
     void Update()
     {
         float moveForward = Input.GetAxisRaw("Vertical");
 
-        movement = new Vector3(0f, 0f, moveForward);
+       // movement = new Vector3(0f, 0f, moveForward);
 
-        movement = movement * speed * Time.deltaTime;
+      //  movement = movement * speed * Time.deltaTime;
 
-        transform.position += movement;
+       // transform.position += movement;
 
+        //turning logic
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
             rotate = true;
@@ -31,7 +35,62 @@ public class PlayerController : MonoBehaviour
             rotate = true;
             Turn("Left");
         }
+
+
+        //moving logic
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            move = true;
+            Move("Forward");
+        }
+        else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            move = true;
+            Move("Back");
+        }
+
     }
+
+    async void Move(string Direction)
+    {
+        if(move && !isRotating)
+        {
+                //Vector3 initialPosition = transform.position;
+            isMoving = true;
+            while(move)
+            {
+                if (Direction == "Forward")
+                {
+                    transform.Translate(Vector3.forward);
+                    movement += 1;
+
+                    if(movement >= 5)
+                        {
+                            move = false;
+                            movement = 0;
+                            isMoving = false;
+                        }
+                    await Awaitable.WaitForSecondsAsync(0.02f);
+                }   
+
+                if (Direction == "Back")
+                {
+                    transform.Translate(Vector3.back);
+                    movement -= 1;
+
+                    if(movement <= -5)
+                    {
+                        move = false;
+                        movement = 0;
+                        isMoving = false;
+                    }
+                    await Awaitable.WaitForSecondsAsync(0.02f);
+                }
+
+            }
+        }
+    }
+
 
     async void Turn(string Direction)
     {
