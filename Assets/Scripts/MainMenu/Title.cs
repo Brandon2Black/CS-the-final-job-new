@@ -22,6 +22,6 @@ public void Start()
     public void SettingsVisible(bool yeah)
     {
       SettingsUI.gameObject.SetActive(!SettingsUI.gameObject.activeSelf);
-      Debug.Log("kai will give urena creampies");
+      //Debug.Log("kai will give urena creampies");
     }
 }
